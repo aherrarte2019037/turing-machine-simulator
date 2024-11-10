@@ -1,0 +1,45 @@
+name: recognizer
+states: [q0, q1, q2, q3, qverify, qbalance, qaccept, qreject]
+input_alphabet: [a, b]
+tape_alphabet: [a, b, X, Y, _]
+transitions:
+  # Estado q0: Procesar la primera 'a'.
+  (q0, a): [q1, X, R]
+  (q0, b): [qreject, b, R]
+  (q0, _): [qreject, _, R]
+
+  # Estado q1: Procesar todas las 'a' y luego encontrar 'b'.
+  (q1, a): [q1, X, R]
+  (q1, b): [q2, Y, R]
+  (q1, _): [qreject, _, R]
+
+  # Estado q2: Procesar todas las 'b'.
+  (q2, b): [q2, Y, R]
+  (q2, a): [qreject, a, R]
+  (q2, _): [q3, _, L]
+
+  # Estado q3: Retroceder para verificar el balance.
+  (q3, X): [q3, X, L]
+  (q3, Y): [q3, Y, L]
+  (q3, _): [qverify, _, R]
+
+  # Estado qverify: Avanzar y verificar balance entre X e Y.
+  (qverify, X): [qbalance, _, R]
+  (qverify, Y): [qbalance, _, R]
+  (qverify, _): [qaccept, _, R]  # Aceptar si no quedan más X ni Y.
+
+  # Estado qbalance: Balancear pares de X y Y.
+  (qbalance, X): [qverify, _, R]
+  (qbalance, Y): [qverify, _, R]
+  (qbalance, _): [qreject, _, R]  # Rechazar si no hay más pares para balancear.
+
+  # Estado qaccept: Aceptar la cadena.
+  (qaccept, _): [qaccept, _, R]
+
+  # Estado qreject: Rechazar la cadena.
+  (qreject, _): [qreject, _, R]
+
+initial_state: q0
+accept_state: qaccept
+reject_state: qreject
+input: "aaaaabb"

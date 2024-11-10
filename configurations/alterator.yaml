@@ -1,0 +1,50 @@
+name: alterator
+states: [q0, q1, q2, q3, qverify, qaccept, qreject]
+input_alphabet: [a, b]
+tape_alphabet: [a, b, _, X, Y]
+transitions:
+  # Estado q0: Procesar el primer símbolo 'a' y buscar un 'b' correspondiente.
+  (q0, a): [q1, X, R]  # Marca 'a' como 'X' y avanza.
+  (q0, b): [qreject, b, R]  # Si encuentra un 'b' sin un 'a', rechaza.
+  (q0, X): [q0, X, R]  # Ignora los 'X' ya marcados.
+  (q0, Y): [q0, Y, R]  # Ignora los 'Y' ya marcados.
+  (q0, _): [qverify, _, R]  # Si llega al final y todo está marcado, verifica.
+
+  # Estado q1: Buscar un 'b' correspondiente para el 'a' procesado.
+  (q1, a): [q1, a, R]  # Avanza sobre 'a' adicionales.
+  (q1, b): [q2, Y, L]  # Marca 'b' como 'Y' y retrocede.
+  (q1, X): [q1, X, R]  # Ignora los 'X' ya marcados.
+  (q1, Y): [q1, Y, R]  # Ignora los 'Y' ya marcados.
+  (q1, _): [qreject, _, R]  # Si no encuentra un 'b', rechaza.
+
+  # Estado q2: Retroceder hasta el inicio de la cinta.
+  (q2, a): [q2, a, L]  # Retrocede sobre 'a'.
+  (q2, b): [q2, b, L]  # Retrocede sobre 'b'.
+  (q2, X): [q3, X, R]  # Al encontrar un marcador 'X', cambia al estado q3.
+  (q2, Y): [q2, Y, L]  # Retrocede sobre 'Y'.
+  (q2, _): [q3, _, R]  # Si llega al extremo izquierdo, cambia a q3.
+
+  # Estado q3: Volver al inicio para procesar más símbolos.
+  (q3, a): [q0, a, R]  # Regresa a q0 para procesar más 'a'.
+  (q3, b): [q0, b, R]  # Regresa a q0 para procesar más 'b'.
+  (q3, X): [q3, X, R]  # Avanza sobre 'X'.
+  (q3, Y): [q3, Y, R]  # Avanza sobre 'Y'.
+  (q3, _): [qverify, _, R]  # Si todo está procesado, verifica.
+
+  # Estado qverify: Verificar que solo queden marcadores 'X' y 'Y'.
+  (qverify, X): [qverify, X, R]
+  (qverify, Y): [qverify, Y, R]
+  (qverify, _): [qaccept, _, R]  # Acepta si todo está marcado.
+  (qverify, a): [qreject, a, R]  # Rechaza si quedan 'a' sin procesar.
+  (qverify, b): [qreject, b, R]  # Rechaza si quedan 'b' sin procesar.
+
+  # Estado qaccept: Acepta si todo está procesado.
+  (qaccept, _): [qaccept, _, R]
+
+  # Estado qreject: Rechaza si hay un error.
+  (qreject, _): [qreject, _, R]
+
+initial_state: q0
+accept_state: qaccept
+reject_state: qreject
+input: ""
