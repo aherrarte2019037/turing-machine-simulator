@@ -1,4 +1,5 @@
 class TuringMachine:
+    # funcion inicial
     def __init__(self, config):
         self.states = config['states']
         self.input_alphabet = config['input_alphabet']
@@ -13,6 +14,7 @@ class TuringMachine:
         self.head_position = 0
         self.current_state = self.initial_state
 
+    # funcion para mover la cinta
     def step(self):
         symbol = self.tape[self.head_position]
         transition_key = (self.current_state, symbol)
@@ -30,11 +32,11 @@ class TuringMachine:
 
             self.current_state = next_state
         else:
-            print(f"Transición no encontrada: {transition_key}")
+            print(f"No se encontro la transición: {transition_key}")
             self.current_state = self.reject_state
 
 
-
+    # funcion para simular la maquina de turing
     def simulate(self):
         result = f"Estado inicial: {self.current_state}\n"
         while self.current_state not in {self.accept_state, self.reject_state}:

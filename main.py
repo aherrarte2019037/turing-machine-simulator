@@ -46,7 +46,7 @@ def main():
             print(Fore.MAGENTA + "\nGracias por utilizar el sistema de pruebas para la Máquina de Turing.")
             break
         else:
-            print(Fore.RED + "Opción inválida. Por favor, seleccione una opción válida.")
+            print(Fore.RED + "Error: Seleccione una opción válida.")
 
 if __name__ == "__main__":
     main()
