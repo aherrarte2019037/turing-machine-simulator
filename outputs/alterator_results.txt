@@ -1,0 +1,27 @@
+Estado inicial: q0
+Estado actual: q0, Cinta: abab_
+Estado actual: q1, Cinta: Xbab_
+Estado actual: q1, Cinta: Xbab_
+Estado actual: q1, Cinta: Xbab_
+Estado actual: q1, Cinta: Xbab_
+Estado actual: q2, Cinta: Xbab_
+Estado actual: q3, Cinta: XbaX_
+Estado actual: q3, Cinta: XbaX_
+Estado actual: q3, Cinta: XbaX_
+Estado actual: q3, Cinta: _XbaX_
+Estado actual: q0, Cinta: _XbaX_
+Estado actual: q0, Cinta: _XbaX_
+Estado actual: q1, Cinta: _XXaX_
+Estado actual: q1, Cinta: _XXaX_
+Estado actual: q1, Cinta: _XXaX_
+Estado actual: q2, Cinta: _XXaX_
+Estado actual: q2, Cinta: _XXaX_
+Estado actual: q3, Cinta: _XXXX_
+Estado actual: q3, Cinta: _XXXX_
+Estado actual: q3, Cinta: _XXXX_
+Estado actual: q0, Cinta: _XXXX_
+Estado actual: q0, Cinta: _XXXX_
+Estado actual: q0, Cinta: _XXXX_
+Estado actual: q0, Cinta: _XXXX_
+Estado actual: q0, Cinta: _XXXX_
+Resultado final: Aceptada

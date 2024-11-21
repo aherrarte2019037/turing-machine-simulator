@@ -1,0 +1,26 @@
+Estado inicial: q0
+Estado actual: q0, Cinta: aaaaabb_
+Estado actual: q1, Cinta: Xaaaabb_
+Estado actual: q1, Cinta: XXaaabb_
+Estado actual: q1, Cinta: XXXaabb_
+Estado actual: q1, Cinta: XXXXabb_
+Estado actual: q1, Cinta: XXXXXbb_
+Estado actual: q2, Cinta: XXXXXYb_
+Estado actual: q2, Cinta: XXXXXYY_
+Estado actual: q3, Cinta: XXXXXYY_
+Estado actual: q3, Cinta: XXXXXYY_
+Estado actual: q3, Cinta: XXXXXYY_
+Estado actual: q3, Cinta: XXXXXYY_
+Estado actual: q3, Cinta: XXXXXYY_
+Estado actual: q3, Cinta: XXXXXYY_
+Estado actual: q3, Cinta: XXXXXYY_
+Estado actual: q3, Cinta: _XXXXXYY_
+Estado actual: qverify, Cinta: _XXXXXYY_
+Estado actual: qbalance, Cinta: __XXXXYY_
+Estado actual: qverify, Cinta: ___XXXYY_
+Estado actual: qbalance, Cinta: ____XXYY_
+Estado actual: qverify, Cinta: _____XYY_
+Estado actual: qbalance, Cinta: ______YY_
+Estado actual: qverify, Cinta: _______Y_
+Estado actual: qbalance, Cinta: _________
+Resultado final: Rechazada

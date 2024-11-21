@@ -5,6 +5,9 @@ import os
 # Inicializar Colorama
 init(autoreset=True)
 
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def display_menu():
     print(Fore.CYAN + Style.BRIGHT + "Bienvenido al sistema de pruebas para la Máquina de Turing de Angel Herrate y Bryan España")
     print(Fore.YELLOW + Style.BRIGHT + "\nSeleccione una de las siguientes opciones:")
@@ -34,8 +37,10 @@ def main():
         choice = input(Fore.GREEN + "Seleccione una opción: " + Fore.WHITE)
 
         if choice == "1":
+            clear_console()
             run_alterator_tests()
         elif choice == "2":
+            clear_console()
             run_recognizer_tests()
         elif choice == "0":
             print(Fore.MAGENTA + "\nGracias por usar el sistema. ¡Hasta luego!")
