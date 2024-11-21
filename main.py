@@ -9,7 +9,7 @@ def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def display_menu():
-    print(Fore.CYAN + Style.BRIGHT + "Bienvenido al sistema de pruebas para la Máquina de Turing de Angel Herrate y Bryan España")
+    print(Fore.CYAN + Style.BRIGHT + "Bienvenido al sistema de pruebas para la Máquina de Turing")
     print(Fore.YELLOW + Style.BRIGHT + "\nSeleccione una de las siguientes opciones:")
     print(Fore.GREEN + "[1]" + Fore.WHITE + " Correr pruebas de Alterator")
     print(Fore.GREEN + "[2]" + Fore.WHITE + " Correr pruebas de Recognizer")
