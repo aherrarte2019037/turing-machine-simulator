@@ -49,20 +49,28 @@ Ambas máquinas están diseñadas para fines educativos y pueden ejecutarse con 
 1. **Clonar el repositorio:**
 
    ```bash
-   git clone 
-   cd PROYECTO_TC
+   git clone https://github.com/aherrarte2019037/turing-machine-simulator
+   cd turing-machine-simulator
+   ```
 
 2. **Crear un entorno virtual:**
 
     ```bash
     python3 -m venv venv
     source venv/bin/activate   # En Windows: venv\Scripts\activate
+    ```
 
-2. **Instalar dependencias:**
+3. **Instalar dependencias:**
 
     ```bash
     pip install -r colorama 
     pip install pyyaml
+    ```
+  Alternativamente, puedes usar el archivo `requirements.txt`:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Tabla de Contenidos
 
